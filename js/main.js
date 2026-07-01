@@ -277,7 +277,6 @@ function initHeroInteraction() {
   const hero = document.querySelector('.hero');
   if (!hero) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (!window.matchMedia('(hover: hover)').matches) return;
 
   const inner = hero.querySelector('.hero__inner');
   let ticking = false;
