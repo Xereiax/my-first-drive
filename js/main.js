@@ -281,17 +281,16 @@ function initHeroInteraction() {
   const inner = hero.querySelector('.hero__inner');
   let ticking = false;
   let cx = 0.5, cy = 0.5;
+  let bgX = 0, bgY = 0;
+  let returnRaf = null;
 
   function apply() {
-    // 1. Spotlight position
     hero.style.setProperty('--mx', (cx * 100).toFixed(1) + '%');
     hero.style.setProperty('--my', (cy * 100).toFixed(1) + '%');
-
-    // 2. Background parallax — moves opposite to cursor (±20px / ±10px)
-    hero.style.setProperty('--bg-x', ((cx - 0.5) * -40).toFixed(1) + 'px');
-    hero.style.setProperty('--bg-y', ((cy - 0.5) * -20).toFixed(1) + 'px');
-
-    // 3. Content 3D tilt — very subtle (max ±2.5deg)
+    bgX = (cx - 0.5) * -40;
+    bgY = (cy - 0.5) * -20;
+    hero.style.setProperty('--bg-x', bgX.toFixed(1) + 'px');
+    hero.style.setProperty('--bg-y', bgY.toFixed(1) + 'px');
     if (inner) {
       const rx = ((cy - 0.5) * -3).toFixed(2);
       const ry = ((cx - 0.5) *  4).toFixed(2);
@@ -300,21 +299,32 @@ function initHeroInteraction() {
     ticking = false;
   }
 
+  function floatBack() {
+    bgX += (0 - bgX) * 0.1;
+    bgY += (0 - bgY) * 0.1;
+    hero.style.setProperty('--bg-x', bgX.toFixed(2) + 'px');
+    hero.style.setProperty('--bg-y', bgY.toFixed(2) + 'px');
+    if (Math.abs(bgX) > 0.05 || Math.abs(bgY) > 0.05) {
+      returnRaf = requestAnimationFrame(floatBack);
+    } else {
+      hero.style.setProperty('--bg-x', '0px');
+      hero.style.setProperty('--bg-y', '0px');
+    }
+  }
+
   hero.addEventListener('mouseenter', () => {
+    if (returnRaf) { cancelAnimationFrame(returnRaf); returnRaf = null; }
     hero.classList.add('hero--lit');
     if (inner) inner.style.transition = 'none';
   });
 
   hero.addEventListener('mouseleave', () => {
     hero.classList.remove('hero--lit');
-    hero.style.removeProperty('--bg-x');
-    hero.style.removeProperty('--bg-y');
+    returnRaf = requestAnimationFrame(floatBack);
     if (inner) {
       inner.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
       inner.style.transform = 'none';
-      inner.addEventListener('transitionend', () => {
-        inner.style.transition = '';
-      }, { once: true });
+      inner.addEventListener('transitionend', () => { inner.style.transition = ''; }, { once: true });
     }
   });
 
