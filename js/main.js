@@ -450,6 +450,42 @@ function whatsappIcon(size = 20) {
 }
 
 /* -------------------------------------------------------
+   Stats counter — counts up on scroll-into-view
+------------------------------------------------------- */
+function initStatsCounter() {
+  const items = document.querySelectorAll('.stat-item[data-count]');
+  if (!items.length) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+
+      const item    = entry.target;
+      const el      = item.querySelector('.stat-item__number');
+      if (!el) return;
+
+      const target   = parseInt(item.dataset.count, 10);
+      const suffix   = item.dataset.suffix || '';
+      const duration = 1600;
+      const startTs  = performance.now();
+
+      function tick(now) {
+        const elapsed  = now - startTs;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased    = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.round(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.5 });
+
+  items.forEach(item => observer.observe(item));
+}
+
+/* -------------------------------------------------------
    Active nav link highlighting
 ------------------------------------------------------- */
 function initActiveNav() {
@@ -476,6 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollCard();
   initScrollReveal();
   initActiveNav();
+  initStatsCounter();
 
   // Render areas if container present
   if (document.querySelector('.areas-grid--home')) {

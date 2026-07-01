@@ -1324,6 +1324,118 @@ em { font-style: italic; }
   margin-bottom: var(--sp-6);
 }
 
+/* --- 11b. Reviews Marquee --- */
+.reviews-marquee {
+  overflow: hidden;
+  margin-top: var(--sp-10);
+  padding-block: var(--sp-2);
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 6%,
+    black 94%,
+    transparent 100%
+  );
+}
+
+.reviews-marquee__track {
+  display: flex;
+  animation: marquee-scroll 34s linear infinite;
+  will-change: transform;
+}
+
+.reviews-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+.reviews-marquee__set {
+  display: flex;
+  gap: var(--sp-5);
+  padding-right: var(--sp-5);
+  flex-shrink: 0;
+}
+
+.review-card--marquee {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.review-google-card {
+  width: 200px;
+  flex-shrink: 0;
+  background-color: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--sp-2);
+}
+
+.review-google-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #4285F4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: #FFFFFF;
+  margin-bottom: var(--sp-1);
+  flex-shrink: 0;
+}
+
+.review-google-card__score {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  color: var(--clr-fg);
+  line-height: 1;
+}
+
+.review-google-card__stars {
+  color: var(--clr-accent);
+  font-size: var(--text-lg);
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+.review-google-card__src {
+  font-size: var(--text-xs);
+  color: var(--clr-subtle);
+  font-weight: 500;
+  margin-top: var(--sp-1);
+  line-height: 1.5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-marquee {
+    overflow: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .reviews-marquee__track {
+    animation: none;
+    flex-wrap: wrap;
+    padding-inline: var(--sp-5);
+    gap: var(--sp-4);
+  }
+  .reviews-marquee__set:last-child {
+    display: none;
+  }
+}
+
 /* --- 12. Booking Section --- */
 .booking {
   background-color: var(--clr-surface);
@@ -1474,6 +1586,35 @@ em { font-style: italic; }
   font-size: var(--text-sm);
   color: var(--clr-muted);
   line-height: 1.4;
+}
+
+/* --- 13b. Stats Strip --- */
+.stats-strip {
+  background-color: var(--clr-primary);
+  padding-block: var(--sp-12);
+}
+
+.stats-strip__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-8) var(--sp-6);
+  text-align: center;
+}
+
+.stat-item__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--clr-accent);
+  line-height: 1;
+  margin-bottom: var(--sp-2);
+}
+
+.stat-item__label {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.65);
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 /* --- 14. Page Hero (inner pages) --- */
@@ -1895,6 +2036,11 @@ em { font-style: italic; }
   }
 }
 
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
 @keyframes hero-rise {
   from {
     opacity: 0;
@@ -1943,6 +2089,11 @@ em { font-style: italic; }
 
   .trust-strip__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stats-strip__list {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--sp-6);
   }
 
   .services__grid {
