@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <title>My First Drive — Driving Lessons in Hounslow, Feltham, Twickenham &amp; West London</title>
+  <meta name="description" content="Friendly, patient driving instructors covering Hounslow, Feltham, Twickenham and 10 West London areas. Automatic and manual lessons. Block booking or Pay As You Go.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="My First Drive — Driving Lessons in West London">
+  <meta property="og:description" content="Patient, experienced instructors. Automatic and manual lessons across Hounslow, Feltham, Twickenham and more.">
+  <meta property="og:type" content="website">
+  <!-- TODO: Add og:image and og:url once domain is confirmed -->
+
+  <!-- Canonical URL — TODO: update once domain is live -->
+  <!-- <link rel="canonical" href="https://www.myfirstdrive.co.uk/"> -->
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Local Business structured data — TODO: fill in address/phone/URL once confirmed -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DrivingSchool",
+    "name": "My First Drive",
+    "description": "Automatic and manual driving lessons covering Hounslow, Feltham, Twickenham and West London.",
+    "areaServed": ["Hounslow","Feltham","Bedfont","Hanworth","Hampton","Teddington","Twickenham","Osterley","Isleworth","Ashford"],
+    "url": "TODO_WEBSITE_URL",
+    "telephone": "TODO_PHONE_NUMBER",
+    "foundingDate": "2025"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- Announcement bar -->
+  <div class="announcement-bar" id="announcement-bar" role="note" aria-label="Site announcement">
+    <div class="announcement-bar__inner">
+      <span class="announcement-bar__badge">New</span>
+      <p class="announcement-bar__text">
+        Introductory lesson rates now available —
+        <a href="#" class="announcement-bar__link" data-whatsapp>Book via WhatsApp</a>
+      </p>
+    </div>
+    <button class="announcement-bar__close" id="bar-close" aria-label="Dismiss announcement">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M1 1l10 10M11 1L1 11"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================= -->
+  <header class="site-header site-header--transparent" role="banner">
+    <div class="container">
+      <div class="nav-inner">
+
+        <a href="index.html" class="site-logo" aria-label="My First Drive — go to homepage">
+<svg class="site-logo__mark" width="26" height="26" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="16" cy="16" r="13.5" stroke="currentColor" stroke-width="2.2"/>
+            <circle cx="16" cy="16" r="3.5" fill="currentColor"/>
+            <line x1="16" y1="12.5" x2="16" y2="2.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="18.6" y1="17.5" x2="27.2" y2="22.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+            <line x1="13.4" y1="17.5" x2="4.8" y2="22.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+                    <span class="site-logo__name">My First Drive</span>
+          <span class="site-logo__sub">Automatic &amp; Manual</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <ul class="site-nav__list" role="list">
+            <li><a href="areas.html" class="site-nav__link">Areas</a></li>
+            <li><a href="about.html" class="site-nav__link">About</a></li>
+            <li><a href="reviews.html" class="site-nav__link">Reviews</a></li>
+            <li><a href="contact.html" class="site-nav__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="#" class="btn btn--whatsapp btn--sm nav-cta" data-whatsapp
+           aria-label="Book a driving lesson via WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path d="M10 0C4.477 0 0 4.477 0 10c0 1.76.46 3.41 1.26 4.845L0 20l5.305-1.235A9.953 9.953 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm4.88 13.786c-.207.583-1.21 1.114-1.658 1.183-.424.065-.96.092-1.548-.097-.357-.112-.815-.26-1.398-.51-2.458-1.06-4.063-3.485-4.185-3.647-.12-.163-.977-1.3-.977-2.48 0-1.18.62-1.76.838-2 .217-.237.473-.296.63-.296l.454.009c.145.005.34-.055.532.405.196.467.666 1.625.723 1.743.058.118.097.256.019.41-.077.153-.116.247-.232.38-.115.132-.241.295-.345.396-.115.11-.235.23-.1.45.134.22.596.982 1.28 1.59.88.784 1.622 1.027 1.851 1.14.228.115.36.097.493-.056.133-.153.57-.664.722-.893.152-.23.303-.19.51-.114.208.077 1.32.622 1.548.735.228.115.38.172.435.268.056.097.056.558-.15 1.14z"/>
+          </svg>
+          Book Now
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span class="nav-toggle__line" aria-hidden="true"></span>
+          <span class="nav-toggle__line" aria-hidden="true"></span>
+          <span class="nav-toggle__line" aria-hidden="true"></span>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="areas.html" class="mobile-nav__link">Areas we cover</a>
+    <a href="about.html" class="mobile-nav__link">About us</a>
+    <a href="reviews.html" class="mobile-nav__link">Reviews</a>
+    <a href="contact.html" class="mobile-nav__link">Contact</a>
+    <div class="mobile-nav__cta">
+      <a href="#" class="btn btn--whatsapp" data-whatsapp style="width:100%;justify-content:center;"
+         aria-label="Book a lesson via WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path d="M10 0C4.477 0 0 4.477 0 10c0 1.76.46 3.41 1.26 4.845L0 20l5.305-1.235A9.953 9.953 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm4.88 13.786c-.207.583-1.21 1.114-1.658 1.183-.424.065-.96.092-1.548-.097-.357-.112-.815-.26-1.398-.51-2.458-1.06-4.063-3.485-4.185-3.647-.12-.163-.977-1.3-.977-2.48 0-1.18.62-1.76.838-2 .217-.237.473-.296.63-.296l.454.009c.145.005.34-.055.532.405.196.467.666 1.625.723 1.743.058.118.097.256.019.41-.077.153-.116.247-.232.38-.115.132-.241.295-.345.396-.115.11-.235.23-.1.45.134.22.596.982 1.28 1.59.88.784 1.622 1.027 1.851 1.14.228.115.36.097.493-.056.133-.153.57-.664.722-.893.152-.23.303-.19.51-.114.208.077 1.32.622 1.548.735.228.115.38.172.435.268.056.097.056.558-.15 1.14z"/>
+        </svg>
+        Book via WhatsApp
+      </a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         HERO
+    ============================================================= -->
+    <section class="hero" aria-label="Welcome to My First Drive">
+      <div class="container hero__inner">
+
+        <div class="hero__tag" aria-hidden="true">
+          <span class="hero__tag-dot"></span>
+          Driving lessons across West London
+        </div>
+
+        <h1 class="hero__heading">
+          Your first drive <em>starts here.</em>
+        </h1>
+
+        <p class="hero__sub" id="hero-sub">Many learners find automatics easier and less stressful — no clutch, no stalling. Great for nervous drivers or those who just want to focus on the road.</p>
+
+        <!-- Auto / Manual toggle -->
+        <div class="transmission-toggle" role="group" aria-label="Choose your transmission type">
+          <input type="radio" name="transmission" id="t-automatic" value="automatic" checked>
+          <label for="t-automatic">Automatic</label>
+          <input type="radio" name="transmission" id="t-manual" value="manual">
+          <label for="t-manual">Manual</label>
+        </div>
+
+        <div class="hero__cta-group">
+          <a href="#" class="btn btn--accent btn--lg" data-whatsapp
+             aria-label="Book a driving lesson via WhatsApp">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M10 0C4.477 0 0 4.477 0 10c0 1.76.46 3.41 1.26 4.845L0 20l5.305-1.235A9.953 9.953 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm4.88 13.786c-.207.583-1.21 1.114-1.658 1.183-.424.065-.96.092-1.548-.097-.357-.112-.815-.26-1.398-.51-2.458-1.06-4.063-3.485-4.185-3.647-.12-.163-.977-1.3-.977-2.48 0-1.18.62-1.76.838-2 .217-.237.473-.296.63-.296l.454.009c.145.005.34-.055.532.405.196.467.666 1.625.723 1.743.058.118.097.256.019.41-.077.153-.116.247-.232.38-.115.132-.241.295-.345.396-.115.11-.235.23-.1.45.134.22.596.982 1.28 1.59.88.784 1.622 1.027 1.851 1.14.228.115.36.097.493-.056.133-.153.57-.664.722-.893.152-.23.303-.19.51-.114.208.077 1.32.622 1.548.735.228.115.38.172.435.268.056.097.056.558-.15 1.14z"/>
+            </svg>
+            Book via WhatsApp
+          </a>
+          <a href="areas.html" class="btn btn--ghost-light btn--lg">
+            See our areas
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRUST STRIP
+    ============================================================= -->
+    <section class="trust-strip" aria-label="Why choose My First Drive">
+      <div class="container">
+        <ul class="trust-strip__grid reveal-group" role="list">
+
+          <li class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__stat">15+</div>
+              <div class="trust-item__label">Years' experience</div>
+              <div class="trust-item__desc">Our instructor team brings over 15 years of teaching experience to every lesson.</div>
+            </div>
+          </li>
+
+          <li class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 8v4l2 2"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__stat">Tailored</div>
+              <div class="trust-item__label">To every student</div>
+              <div class="trust-item__desc">No fixed syllabus. Every lesson is structured around where you are and where you need to go.</div>
+            </div>
+          </li>
+
+          <li class="trust-item">
+            <div class="trust-item__icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M8 2v4M16 2v4M2 10h20"/>
+              </svg>
+            </div>
+            <div>
+              <div class="trust-item__stat">Flexible</div>
+              <div class="trust-item__label">Block booking or PAYG</div>
+              <div class="trust-item__desc">Book a block of lessons for better value, or pay as you go — whichever works for you.</div>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SCROLL CARD REVEAL
+    ============================================================= -->
+    <section class="scroll-card-section" aria-labelledby="lesson-preview-heading">
+      <div class="container">
+        <p class="section-label" aria-hidden="true">In the car</p>
+        <h2 class="section-heading reveal" id="lesson-preview-heading">What a lesson looks like</h2>
+        <p class="section-intro reveal">Calm, structured, and at your pace — from the very first lesson.</p>
+      </div>
+      <div class="scroll-card-stage" data-scroll-stage>
+        <div class="scroll-card-frame" data-scroll-card>
+          <div class="scroll-card-inner">
+            <img
+              src="images/instructor-student.webp"
+              alt="Driving instructor guiding a student at the wheel on a West London residential street"
+              width="1265"
+              height="950"
+              loading="lazy"
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SERVICES
+    ============================================================= -->
+    <section class="services section" aria-labelledby="services-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">What we offer</p>
+        <h2 class="section-heading reveal" id="services-heading">Lessons tailored to you</h2>
+        <p class="section-intro reveal">
+          Whether you've never sat behind the wheel or you're getting back behind it, we'll work at your pace — not a one-size-fits-all programme.
+        </p>
+
+        <div class="services__grid reveal-group">
+
+          <article class="service-card service-card--featured">
+            <span class="card-tag">Most popular</span>
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+            </div>
+            <h3>Complete Beginners</h3>
+            <p>Never driven before? We start from the absolute beginning — controls, observation, manoeuvres. Patient, calm, no pressure. You set the pace.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+              </svg>
+            </div>
+            <h3>Nervous Drivers</h3>
+            <p>Driving anxiety is more common than you think. We create a calm, supportive environment where you can build confidence at your own speed — no judgment, ever.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+              </svg>
+            </div>
+            <h3>Refresher Lessons</h3>
+            <p>Been off the road for a while, or recently failed your test? We'll identify the gaps and build from there — no need to start from scratch.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Automatic Lessons</h3>
+            <p>No clutch, no gear changes — just focus on the road. Automatic lessons are ideal for nervous drivers and those who want to pass first time with less to think about.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <h3>Manual Lessons</h3>
+            <p>A manual licence lets you drive any car. Our instructors make gear changes and clutch control feel natural — not something to dread.</p>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         AUTO VS MANUAL COMPARISON
+    ============================================================= -->
+    <section class="comparison section" aria-labelledby="comparison-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">Choosing your lessons</p>
+        <h2 class="section-heading reveal" id="comparison-heading">Automatic or manual?</h2>
+        <p class="section-intro reveal">Both are recognised DVSA licences. The right choice depends on your goals and how you like to learn.</p>
+
+        <div class="comparison__grid reveal-group">
+
+          <article class="comparison-card comparison-card--auto">
+            <div>
+              <p class="comparison-card__eyebrow">Automatic</p>
+              <h3 class="comparison-card__title">No clutch. Just drive.</h3>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li>No gear changes or clutch to manage</li>
+              <li>Easier to focus on road awareness from lesson one</li>
+              <li>Great for nervous drivers or those with mobility needs</li>
+              <li>Typically faster to reach test standard</li>
+              <li>Automatic-only DVSA licence on passing</li>
+            </ul>
+            <a href="#" class="btn btn--accent" data-whatsapp aria-label="Book automatic driving lessons via WhatsApp">
+              Book automatic lessons
+            </a>
+          </article>
+
+          <article class="comparison-card comparison-card--manual">
+            <div>
+              <p class="comparison-card__eyebrow">Manual</p>
+              <h3 class="comparison-card__title">Full control. Full licence.</h3>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li>Learn clutch control, gear changes, and biting point</li>
+              <li>Pass once — drive any car on the road</li>
+              <li>Full DVSA licence covers both manual and automatic</li>
+              <li>Standard choice for most new drivers</li>
+              <li>Our instructors make the clutch feel natural from lesson one</li>
+            </ul>
+            <a href="#" class="btn btn--primary" data-whatsapp aria-label="Book manual driving lessons via WhatsApp">
+              Book manual lessons
+            </a>
+          </article>
+
+        </div>
+
+        <p class="comparison__note reveal">Not sure which to choose? <a href="#" data-whatsapp>Ask us on WhatsApp</a> — we'll help you decide.</p>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         COVERAGE AREAS (Signature Element)
+    ============================================================= -->
+    <section class="coverage section" aria-labelledby="coverage-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">Where we teach</p>
+        <h2 class="section-heading reveal" id="coverage-heading">We cover your area</h2>
+        <p class="section-intro reveal">
+          We teach across ten areas of West London. Click any town to learn more about what lessons look like there — and to book directly.
+        </p>
+
+        <!-- JS renders cards here -->
+        <div class="areas-grid areas-grid--home" role="list" aria-label="Coverage areas — select a town to expand details"></div>
+
+        <div class="coverage__footer reveal">
+          <p class="coverage__footer-note">
+            Expanding to more areas soon. Not on the list? <a href="#" data-whatsapp style="color:rgba(255,255,255,0.8); text-decoration:underline; text-underline-offset:3px;">Ask us on WhatsApp</a> — we may still be able to help.
+          </p>
+          <a href="areas.html" class="btn btn--ghost-light">
+            See all 10 areas
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         REVIEWS
+    ============================================================= -->
+    <section class="reviews section" aria-labelledby="reviews-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">Student feedback</p>
+        <h2 class="section-heading reveal" id="reviews-heading">What our students say</h2>
+
+        <div class="reviews__grid reveal-group">
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="review-card__quote">
+              "Amazing instructor — Enam helped me pass first time with only 2 driving faults! Very patient and professional. Every lesson was well structured which helped me build my confidence."
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">J</div>
+              <div>
+                <div class="review-card__name">Jamil Chowdhury</div>
+                <div class="review-card__date">Google · Local Guide</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars" aria-label="5 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="review-card__quote">
+              "After a bad experience with another driving school, I'd completely lost confidence. My First Drive changed everything — clear, well structured lessons and real support. Passed first time."
+            </blockquote>
+            <div class="review-card__author">
+              <div class="review-card__avatar" aria-hidden="true">M</div>
+              <div>
+                <div class="review-card__name">Mijan Rahman</div>
+                <div class="review-card__date">Google Review</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="review-card review-placeholder">
+            <p class="review-placeholder__text">More reviews coming soon.</p>
+          </article>
+
+        </div>
+
+        <div class="reviews__footer reveal">
+          <!-- TODO: Replace # with actual Google Business Profile reviews link once confirmed -->
+          <a href="#" class="btn btn--ghost" target="_blank" rel="noopener noreferrer"
+             aria-label="Read all reviews on Google (opens in new tab)">
+            See all reviews on Google
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M2 2h10v10M12 2L2 12" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         BOOKING
+    ============================================================= -->
+    <section class="booking section" aria-labelledby="booking-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">Booking options</p>
+        <h2 class="section-heading reveal" id="booking-heading">Flexible booking, no pressure</h2>
+        <p class="section-intro reveal">
+          Two ways to book — whichever fits your schedule and budget. Prices are confirmed via WhatsApp so we can tailor a quote to you.
+        </p>
+
+        <div class="booking__grid reveal-group">
+
+          <article class="booking-card">
+            <span class="booking-card__label">Block booking</span>
+            <h3>Book a block of lessons</h3>
+            <div class="booking-card__price">Better value</div>
+            <p class="booking-card__note">
+              Pay for multiple lessons upfront and save.
+              <!-- TODO: Add actual price once confirmed by client, e.g. "From £X per hour when you book 10 lessons" -->
+            </p>
+            <ul class="booking-card__features" role="list">
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                Discounted rate per lesson
+              </li>
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                Flexible scheduling — book lessons as you go
+              </li>
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                Great if you have a test date in mind
+              </li>
+            </ul>
+            <a href="#" class="btn btn--primary" data-whatsapp aria-label="Get a block booking quote via WhatsApp">
+              Get a quote via WhatsApp
+            </a>
+          </article>
+
+          <article class="booking-card">
+            <span class="booking-card__label">Pay as you go</span>
+            <h3>Pay per lesson</h3>
+            <div class="booking-card__price">Maximum flexibility</div>
+            <p class="booking-card__note">
+              Book one lesson at a time with no upfront commitment.
+              <!-- TODO: Add actual price once confirmed by client, e.g. "£X per hour" -->
+            </p>
+            <ul class="booking-card__features" role="list">
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                No commitment — book when it suits you
+              </li>
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                Try a lesson before committing to a block
+              </li>
+              <li class="booking-card__feature">
+                <span class="booking-card__feature-icon" aria-hidden="true">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M2 8l4 4 8-8"/>
+                  </svg>
+                </span>
+                Ideal for refresher or occasional top-up lessons
+              </li>
+            </ul>
+            <a href="#" class="btn btn--primary" data-whatsapp aria-label="Enquire about pay as you go lessons via WhatsApp">
+              Enquire via WhatsApp
+            </a>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT TEASER
+    ============================================================= -->
+    <section class="about-teaser section" aria-labelledby="about-heading">
+      <div class="container">
+
+        <p class="section-label" aria-hidden="true">Our team</p>
+        <h2 class="section-heading reveal" id="about-heading">Instructors who put you first</h2>
+
+        <div class="about-teaser__grid">
+
+          <div class="about-teaser__content reveal">
+            <p>
+              My First Drive was established in 2025 with one goal: to make learning to drive a calm, confidence-building experience rather than a stressful one.
+            </p>
+            <p>
+              Our instructor team brings over 15 years of combined teaching experience. We work with complete beginners, drivers who've failed their test before, and everyone in between. Every lesson is built around you — not a fixed syllabus.
+            </p>
+            <p>
+              Female instructors are available on request, though availability is limited — please mention this when you get in touch.
+            </p>
+            <div class="instructor-highlights reveal-group">
+              <div class="instructor-highlight">
+                <div class="instructor-highlight__value">2025</div>
+                <div class="instructor-highlight__label">Established — experienced team</div>
+              </div>
+              <div class="instructor-highlight">
+                <div class="instructor-highlight__value">15+</div>
+                <div class="instructor-highlight__label">Years' combined instructor experience</div>
+              </div>
+              <div class="instructor-highlight">
+                <div class="instructor-highlight__value">10</div>
+                <div class="instructor-highlight__label">West London areas covered</div>
+              </div>
+              <div class="instructor-highlight">
+                <div class="instructor-highlight__value">Auto<br>&amp; Man.</div>
+                <div class="instructor-highlight__label">Both transmission types taught</div>
+              </div>
+            </div>
+            <a href="about.html" class="btn btn--ghost mt-8" style="align-self:flex-start; display:inline-flex;">
+              About us
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <figure class="about-teaser__photo reveal" aria-label="Driving instructor and student during a lesson in West London">
+            <img
+              src="images/instructor-student.webp"
+              alt="Driving instructor pointing ahead while student at the wheel listens — a lesson on a quiet West London residential street"
+              width="1265"
+              height="950"
+              loading="lazy"
+            >
+          </figure>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo" aria-label="My First Drive — homepage"><svg class="footer-logo__mark" width="20" height="20" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="16" cy="16" r="13.5" stroke="currentColor" stroke-width="2.2"/><circle cx="16" cy="16" r="3.5" fill="currentColor"/><line x1="16" y1="12.5" x2="16" y2="2.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="18.6" y1="17.5" x2="27.2" y2="22.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><line x1="13.4" y1="17.5" x2="4.8" y2="22.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>My First Drive</a>
+          <p class="footer-tagline">Automatic &amp; Manual · West London</p>
+          <a href="#" class="btn btn--whatsapp btn--sm" data-whatsapp
+             aria-label="Book a driving lesson via WhatsApp"
+             style="margin-bottom: 1.25rem;">
+            <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path d="M10 0C4.477 0 0 4.477 0 10c0 1.76.46 3.41 1.26 4.845L0 20l5.305-1.235A9.953 9.953 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm4.88 13.786c-.207.583-1.21 1.114-1.658 1.183-.424.065-.96.092-1.548-.097-.357-.112-.815-.26-1.398-.51-2.458-1.06-4.063-3.485-4.185-3.647-.12-.163-.977-1.3-.977-2.48 0-1.18.62-1.76.838-2 .217-.237.473-.296.63-.296l.454.009c.145.005.34-.055.532.405.196.467.666 1.625.723 1.743.058.118.097.256.019.41-.077.153-.116.247-.232.38-.115.132-.241.295-.345.396-.115.11-.235.23-.1.45.134.22.596.982 1.28 1.59.88.784 1.622 1.027 1.851 1.14.228.115.36.097.493-.056.133-.153.57-.664.722-.893.152-.23.303-.19.51-.114.208.077 1.32.622 1.548.735.228.115.38.172.435.268.056.097.056.558-.15 1.14z"/>
+            </svg>
+            Book via WhatsApp
+          </a>
+          <!-- Social links — TODO: replace # with actual Instagram/Facebook URLs -->
+          <div class="footer-social" role="list" aria-label="Social media">
+            <a href="#" class="footer-social__link" role="listitem" target="_blank" rel="noopener noreferrer"
+               aria-label="My First Drive on Instagram (coming soon)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="#" class="footer-social__link" role="listitem" target="_blank" rel="noopener noreferrer"
+               aria-label="My First Drive on Facebook (coming soon)">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="areas.html">Areas we cover</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Lessons</h4>
+          <ul class="footer-links" role="list">
+            <li><a href="index.html#services-heading">Beginners</a></li>
+            <li><a href="index.html#services-heading">Nervous drivers</a></li>
+            <li><a href="index.html#services-heading">Refresher lessons</a></li>
+            <li><a href="index.html#services-heading">Automatic</a></li>
+            <li><a href="index.html#services-heading">Manual</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Areas</h4>
+          <div class="footer-areas" role="list" aria-label="Areas we cover">
+            <a href="areas.html#hounslow" class="footer-area-tag" role="listitem">Hounslow</a>
+            <a href="areas.html#feltham" class="footer-area-tag" role="listitem">Feltham</a>
+            <a href="areas.html#bedfont" class="footer-area-tag" role="listitem">Bedfont</a>
+            <a href="areas.html#hanworth" class="footer-area-tag" role="listitem">Hanworth</a>
+            <a href="areas.html#hampton" class="footer-area-tag" role="listitem">Hampton</a>
+            <a href="areas.html#teddington" class="footer-area-tag" role="listitem">Teddington</a>
+            <a href="areas.html#twickenham" class="footer-area-tag" role="listitem">Twickenham</a>
+            <a href="areas.html#osterley" class="footer-area-tag" role="listitem">Osterley</a>
+            <a href="areas.html#isleworth" class="footer-area-tag" role="listitem">Isleworth</a>
+            <a href="areas.html#ashford" class="footer-area-tag" role="listitem">Ashford</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 My First Drive. All rights reserved.</p>
+        <p>Serving West London since 2025.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Floating Action Button -->
+  <div class="whatsapp-fab" role="complementary" aria-label="Quick WhatsApp booking">
+    <span class="whatsapp-fab__tooltip" aria-hidden="true">Book a lesson</span>
+    <a href="#" class="whatsapp-fab__btn" data-whatsapp
+       target="_blank" rel="noopener noreferrer"
+       aria-label="Book a driving lesson via WhatsApp — opens WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path d="M10 0C4.477 0 0 4.477 0 10c0 1.76.46 3.41 1.26 4.845L0 20l5.305-1.235A9.953 9.953 0 0010 20c5.523 0 10-4.477 10-10S15.523 0 10 0zm4.88 13.786c-.207.583-1.21 1.114-1.658 1.183-.424.065-.96.092-1.548-.097-.357-.112-.815-.26-1.398-.51-2.458-1.06-4.063-3.485-4.185-3.647-.12-.163-.977-1.3-.977-2.48 0-1.18.62-1.76.838-2 .217-.237.473-.296.63-.296l.454.009c.145.005.34-.055.532.405.196.467.666 1.625.723 1.743.058.118.097.256.019.41-.077.153-.116.247-.232.38-.115.132-.241.295-.345.396-.115.11-.235.23-.1.45.134.22.596.982 1.28 1.59.88.784 1.622 1.027 1.851 1.14.228.115.36.097.493-.056.133-.153.57-.664.722-.893.152-.23.303-.19.51-.114.208.077 1.32.622 1.548.735.228.115.38.172.435.268.056.097.056.558-.15 1.14z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
