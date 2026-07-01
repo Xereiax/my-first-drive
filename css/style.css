@@ -1221,6 +1221,10 @@ em { font-style: italic; }
   background-color: var(--clr-bg);
 }
 
+.reviews > .container:first-child {
+  padding-bottom: 0;
+}
+
 .reviews__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -1327,7 +1331,7 @@ em { font-style: italic; }
 /* --- 11b. Reviews Marquee --- */
 .reviews-marquee {
   overflow: hidden;
-  margin-top: var(--sp-10);
+  margin-top: var(--sp-4);
   padding-block: var(--sp-2);
   mask-image: linear-gradient(
     to right,
