@@ -267,6 +267,67 @@ function renderCoverageAreas(containerSelector, options = {}) {
 }
 
 /* -------------------------------------------------------
+   Hero interactive parallax + spotlight
+   Three layered effects driven by cursor position:
+   1. Amber spotlight radial gradient follows cursor
+   2. Background photo shifts opposite direction (depth)
+   3. Hero content does a subtle 3D perspective tilt
+------------------------------------------------------- */
+function initHeroInteraction() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+
+  const inner = hero.querySelector('.hero__inner');
+  let ticking = false;
+  let cx = 0.5, cy = 0.5;
+
+  function apply() {
+    // 1. Spotlight position
+    hero.style.setProperty('--mx', (cx * 100).toFixed(1) + '%');
+    hero.style.setProperty('--my', (cy * 100).toFixed(1) + '%');
+
+    // 2. Background parallax — moves opposite to cursor (±20px / ±10px)
+    hero.style.setProperty('--bg-x', ((cx - 0.5) * -40).toFixed(1) + 'px');
+    hero.style.setProperty('--bg-y', ((cy - 0.5) * -20).toFixed(1) + 'px');
+
+    // 3. Content 3D tilt — very subtle (max ±2.5deg)
+    if (inner) {
+      const rx = ((cy - 0.5) * -3).toFixed(2);
+      const ry = ((cx - 0.5) *  4).toFixed(2);
+      inner.style.transform = `perspective(1200px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+    ticking = false;
+  }
+
+  hero.addEventListener('mouseenter', () => {
+    hero.classList.add('hero--lit');
+    if (inner) inner.style.transition = 'none';
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    hero.classList.remove('hero--lit');
+    hero.style.removeProperty('--bg-x');
+    hero.style.removeProperty('--bg-y');
+    if (inner) {
+      inner.style.transition = 'transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)';
+      inner.style.transform = 'none';
+      inner.addEventListener('transitionend', () => {
+        inner.style.transition = '';
+      }, { once: true });
+    }
+  });
+
+  hero.addEventListener('mousemove', e => {
+    const r = hero.getBoundingClientRect();
+    cx = Math.max(0, Math.min(1, (e.clientX - r.left) / r.width));
+    cy = Math.max(0, Math.min(1, (e.clientY - r.top)  / r.height));
+    if (!ticking) { requestAnimationFrame(apply); ticking = true; }
+  });
+}
+
+/* -------------------------------------------------------
    Announcement Bar
 ------------------------------------------------------- */
 function initAnnouncementBar() {
@@ -398,6 +459,7 @@ function initActiveNav() {
 ------------------------------------------------------- */
 document.addEventListener('DOMContentLoaded', () => {
   initAnnouncementBar();
+  initHeroInteraction();
   initWhatsAppLinks();
   initNav();
   initMobileNav();
